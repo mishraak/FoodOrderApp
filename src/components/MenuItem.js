@@ -1,28 +1,24 @@
 import React, { Component } from 'react'
 
+import '../App.css';
+
 class MenuItem extends Component {
-	handleClick(item) {
-
+	
+  handleClick(item) {
     this.props.orderItem(item);
-    /*
-    this.state.orderItems.push(event);
-
-    this.setState({      
-      menuItems : this.state.menuItems,
-      orderItems : this.state.orderItems     
-    });
-
-      console.log(this.state.menuItems);
-      console.log(this.state.orderItems);
-
-   */
-   
-
   }
 
 	render(){
 		return(			
-			<li onClick= { this.handleClick.bind(this,this.props.itemName) }> <a href="#" > { this.props.itemName.name }  |  { this.props.itemName.price } </a> </li> 
+			
+      <li> 
+
+        { this.props.itemName.name }  &nbsp;&nbsp; <b> ${ this.props.itemName.price }  </b>                
+        
+        <button type="button" class="btn btn-success pull-right btn-xs" onClick= { this.handleClick.bind(this,this.props.itemName) }>Add</button> 
+
+      </li> 
+        
 		)
 	}
 

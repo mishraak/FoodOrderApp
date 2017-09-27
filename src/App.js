@@ -20,8 +20,7 @@ class App extends Component {
       }
    }
 
-  handleClick(item) {
-           
+  handleAdd(item) {
     this.state.orderItems.findIndex((i) => {
       if (i.id === item.id){
         i.quantity++;                      
@@ -30,7 +29,6 @@ class App extends Component {
 
     //var newtotal = this.state.total + item.price;
 
-    
     this.setState({      
       menuItems : this.state.menuItems,      
       orderItems : this.state.orderItems,
@@ -38,16 +36,35 @@ class App extends Component {
     });
 
       //console.log(this.state.menuItems);
-      //console.log(this.state.orderItems); 
+      console.log(this.state.orderItems); 
   }
 
+
+    handleRemove(item) {
+    this.state.orderItems.findIndex((i) => {
+      if (i.id === item.id){
+        i.quantity--;                      
+      }      
+    })
+
+    //var newtotal = this.state.total + item.price;
+
+    this.setState({      
+      menuItems : this.state.menuItems,      
+      orderItems : this.state.orderItems,
+      total : this.state.total - item.price                   
+    });
+
+      //console.log(this.state.menuItems);
+      console.log(this.state.orderItems); 
+  }
 
   render() {
 
     let orders = this.state.orderItems.map((order) => {
         return(
-                <ul>
-                  <OrderItem key={order.id} orderName={order} />
+                <ul class="list-group">
+                  <OrderItem key={order.id} orderName={order} orderItem={this.handleRemove.bind(this)} />
               </ul>
         )
     })
@@ -56,8 +73,8 @@ class App extends Component {
     let items = this.state.menuItems.map((item)=>{
       //console.log(item.id);
     return(
-        <ul>
-          <MenuItem key={item.id} itemName={item} orderItem={this.handleClick.bind(this)} />
+        <ul class="list-group">
+          <MenuItem key={item.id} itemName={item} orderItem={this.handleAdd.bind(this)} />
         </ul>
       )
     })
@@ -80,9 +97,11 @@ class App extends Component {
                 {orders}
               </div>             
             </div>
+            <br></br>
+            <br></br>
             <div className="row">
-                <div className="col-md-6 col-sm-offset-6">
-                  Total : { this.state.total }
+                <div className="col-md-2 col-sm-offset-10">
+                  <h3><b>Total :${ this.state.total }</b></h3>
                 </div>
             </div> 
         </div>

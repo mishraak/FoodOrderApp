@@ -5,32 +5,38 @@
 			{
 				"id" : 1,
 				"quantity" : 0,
-				"name" : "food1",
-				"price" : 1
+				"name" : "Pasta Carbonara",
+				"price" : 12.00
 			},
 			{
 				"id" : 2,
 				"quantity" : 0,
-				"name" : "food2",
-				"price" : 2
+				"name" : "Margherita Pizza",
+				"price" : 27.00
 			},
 			{
 				"id" : 3,
 				"quantity" : 0,
-				"name" : "food3",
-				"price" : 3
+				"name" : "Mushroom Risotto",
+				"price" : 16.00
 			},
 			{
 				"id" : 4,	
 				"quantity" : 0,
-				"name" : "food4",
-				"price" : 4
+				"name" : "Panzenella",
+				"price" : 10.00
 			},
 			{
-				"id" : 5,
+				"id" : 5,	
 				"quantity" : 0,
-				"name" : "food5",
-				"price" : 5
+				"name" : "Bruschetta",
+				"price" : 10.00
+			},
+			{
+				"id" : 6,
+				"quantity" : 0,
+				"name" : "Tiramisu",
+				"price" : 6.00
 			}
 		]
 }
