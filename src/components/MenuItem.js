@@ -15,7 +15,7 @@ class MenuItem extends Component {
 
         { this.props.itemName.name }  &nbsp;&nbsp; <b> ${ this.props.itemName.price }  </b>                
         
-        <button type="button" class="btn btn-success pull-right btn-xs" onClick= { this.handleClick.bind(this,this.props.itemName) }>Add</button> 
+        <button type="button" className="btn btn-success pull-right btn-xs" onClick= { this.handleClick.bind(this,this.props.itemName) }>Add</button> 
 
       </li> 
         
